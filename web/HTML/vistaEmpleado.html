@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Empleado | El Rosario</title>
+    <link href="../CSS/styleEmpleado.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="../Style/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Style/fontawesome-free-6.5.2-web/css/all.min.css">
+</head>
+<body>
+    <div class="empleado-container">
+        <!-- Barra superior -->
+        <header class="empleado-header">
+            <div class="header-logo">
+                <img src="../MEDIA/LogoElRosarioWhite.png" alt="Logo El Rosario">
+            </div>
+            <div class="header-title">
+                <h1>Panel de Empleado</h1>
+                <p>Sistema de Reportes de Verificación</p>
+            </div>
+            <button id="logoutBtn" class="logout-btn">
+                <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+            </button>
+        </header>
+        
+        <!-- Contenido principal -->
+        <main class="empleado-main">
+            <div class="welcome-section">
+                <h2>Bienvenido, <span id="employeeName">Empleado</span></h2>
+                <div id="employeeInfo"></div>
+                <p>Selecciona una opción para continuar</p>
+            </div>
+            
+            <div class="actions-grid">
+                <!-- Botón 1: Nuevo Reporte -->
+                <div class="action-card" id="newReportBtn">
+                    <div class="card-icon">
+                        <img src="../MEDIA/newReporte.png" alt="Nuevo Reporte">
+                    </div>
+                    <h3>Nuevo Reporte</h3>
+                    <p>Registrar una nuevo Reporte</p>
+                </div>
+                
+                <!-- Botón 2: Editar Reporte -->
+                <div class="action-card" id="editReportBtn">
+                    <div class="card-icon">
+                        <img src="../MEDIA/EditReport.png" alt="Editar Reporte">
+                    </div>
+                    <h3>Editar Reporte</h3>
+                    <p>Modificar un reporte existente</p>
+                </div>
+                
+                <!-- Botón 3: Consultar Reportes -->
+                <div class="action-card" id="viewReportsBtn">
+                    <div class="card-icon">
+                        <img src="../MEDIA/viewReport.png" alt="Consultar Reportes">
+                    </div>
+                    <h3>Consultar Reportes</h3>
+                    <p>Ver reportes registrados</p>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Pie de página -->
+        <footer class="empleado-footer">
+            <p>Centro Automotriz El Rosario S.A. de C.V. ©</p>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../Style/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../Style/package/dist/sweetalert2.all.min.js"></script>
+    <script src="../Style/fontawesome-free-6.5.2-web/js/all.min.js"></script>
+    <script src="../JS/Empleado.js" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte Consolidado | El Rosario</title>
+    <link href="../CSS/styleVerReporteConsolidado.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="../Style/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Style/fontawesome-free-6.5.2-web/css/all.min.css">
+    <!-- Librería para exportar a PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+    <!-- Librería para exportar a Excel -->
+    <script src="https://cdn.sheetjs.com/xlsx-0.19.3/package/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div class="reporte-container">
+        <header class="reporte-header">
+            <div class="header-logo">
+                <img src="../MEDIA/LogoElRosarioWhite.png" alt="Logo El Rosario">
+            </div>
+            <div class="header-title">
+                <h1>Reporte Consolidado</h1>
+                <p>Visualización de múltiples reportes combinados</p>
+            </div>
+            <button id="backBtn" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Regresar
+            </button>
+        </header>
+        
+        <main class="reporte-main">
+            <div class="reporte-content" id="reporteContent">
+                <!-- Encabezado con logo y nombre -->
+                <div class="encabezado-empresa">
+                    <img src="../MEDIA/LogoElRosario.png" alt="Logo" class="logo-empresa">
+                    <h2>Centro Automotriz El Rosario, S.A. de C.V.</h2>
+                </div>
+                
+                <!-- Título y fecha -->
+                <div class="titulo-fecha">
+                    <h3>REPORTE CONSOLIDADO</h3>
+                    <div class="fecha-firmas">
+                        <div class="fecha">
+                            <span id="fechasConsolidadas">Fechas de Cierre: </span>
+                        </div>
+                        <div class="firmas">
+                            <div class="firma">
+                                <div class="linea-firma"></div>
+                                <p>Firma Gerente</p>
+                            </div>
+                            <div class="firma">
+                                <div class="linea-firma"></div>
+                                <p>Firma Recibido</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Resumen consolidado -->
+                <div class="seccion-reporte">
+                    <h3 class="section-title"><strong>Resumen Consolidado</strong></h3>
+                    <div class="resumen-consolidado">
+                        <div class="resumen-item">
+                            <p>Total de reportes consolidados: <span id="totalReportes"></span></p>
+                        </div>
+                        <div class="resumen-item">
+                            <p>Rango de fechas: <span id="rangoFechas"></span></p>
+                        </div>
+                        <div class="resumen-item">
+                            <p>Rango de órdenes: <span id="rangoOrdenes"></span></p>
+                        </div>
+                        <div class="total-orden">TOTAL CONSOLIDADO: <span id="totalConsolidado"></span> Pesos</div>
+                    </div>
+                </div>
+                
+                <!-- Totales por sucursal -->
+                <div class="seccion-reporte">
+                    <h3 class="section-title">Totales por Sucursal</h3>
+                    <table class="sucursales-table">
+                        <thead>
+                            <tr>
+                                <th>Sucursal</th>
+                                <th>Reportes</th>
+                                <th>Efectivo</th>
+                                <th>Tarjeta</th>
+                                <th>Crédito</th>
+                                <th>Transferencia</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody id="sucursalesBody">
+                            <!-- Filas se generarán dinámicamente -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Relación de cobros consolidados -->
+                <div class="seccion-reporte">
+                    <h3 class="section-title">Relación de Cobros Consolidados</h3>
+                    <div class="cobros-grid">
+                        <div class="cobro-item">
+                            <p>Total contado efectivo:</p>
+                            <p id="totalEfectivoConsolidado"></p>
+                        </div>
+                        <div class="cobro-item">
+                            <p>Total crédito eventual:</p>
+                            <p id="totalCreditoEventualConsolidado"></p>
+                        </div>
+                        <div class="cobro-item">
+                            <p>Total crédito:</p>
+                            <p id="totalCreditoConsolidado"></p>
+                        </div>
+                        <div class="cobro-item">
+                            <p>Total tarjeta bancaria:</p>
+                            <p id="totalTarjetaConsolidado"></p>
+                        </div>
+                        <div class="cobro-item">
+                            <p>Total transferencia:</p>
+                            <p id="totalTransferenciaConsolidado"></p>
+                        </div>
+                        <div class="cobro-item total-item">
+                            <p><strong>TOTAL:</strong></p>
+                            <p id="totalCobrosConsolidado"></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tabla de verificaciones consolidadas -->
+                <div class="seccion-reporte">
+                    <table class="verificaciones-table">
+                        <thead>
+                            <tr>
+                                <th>Verificaciones</th>
+                                <th>Realizadas</th>
+                                <th>Efectivo</th>
+                                <th>Tarjeta</th>
+                                <th>Crédito</th>
+                                <th>Transferencia</th>
+                                <th>Eventuales</th>
+                                <th>TOTAL</th>
+                            </tr>
+                        </thead>
+                        <tbody id="verificacionesConsolidadasBody">
+                            <!-- Filas se generarán dinámicamente -->
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Facturación consolidada -->
+                <div class="seccion-reporte facturacion-section">
+                    <table class="facturacion-table">
+                        <tr>
+                            <td><strong>FACTURADO EN EFECTIVO:</strong></td>
+                            <td id="facturadoEfectivoConsolidado"></td>
+                        </tr>
+                        <tr>
+                            <td><strong>REMISIONADO:</strong></td>
+                            <td id="remisionadoConsolidado"></td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <!-- Detalle de reportes consolidados -->
+                <div class="seccion-reporte">
+                    <h3 class="section-title">Detalle de Reportes Consolidados</h3>
+                    <div class="detalle-reportes-container">
+                        <table class="detalle-reportes-table">
+                            <thead>
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Sucursal</th>
+                                    <th>Empleado</th>
+                                    <th>Orden Inicio</th>
+                                    <th>Orden Fin</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody id="detalleReportesBody">
+                                <!-- Filas se generarán dinámicamente -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Botones de exportación -->
+            <div class="export-buttons">
+                <button id="exportPdfBtn" class="btn export-btn pdf-btn">
+                    <i class="fas fa-file-pdf"></i> Exportar a PDF
+                </button>
+                <button id="exportExcelBtn" class="btn export-btn excel-btn">
+                    <i class="fas fa-file-excel"></i> Exportar a Excel
+                </button>
+            </div>
+        </main>
+        
+        <footer class="reporte-footer">
+            <p>Centro Automotriz El Rosario S.A. de C.V. ©</p>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../Style/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../Style/package/dist/sweetalert2.all.min.js"></script>
+    <script src="../Style/fontawesome-free-6.5.2-web/js/all.min.js"></script>
+    <script src="../JS/verReporteConsolidado.js" type="text/javascript"></script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 29 abr 2025, 19:15:20
+    Author     : heezl
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+.empleado-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+.empleado-header {
+    background: linear-gradient(135deg, #015d25 0%, #1e962e 100%);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-logo img {
+    height: 60px;
+}
+
+.header-title h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.header-title p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.logout-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logout-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Main content */
+.empleado-main {
+    flex: 1;
+    padding: 2rem;
+    background-color: #f5f5f5;
+}
+
+.welcome-section {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.welcome-section h2 {
+    color: #015d25;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.welcome-section h2 span {
+    color: #1e962e;
+    font-weight: 600;
+}
+
+.welcome-section p {
+    color: #666;
+}
+
+.actions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.action-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.action-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border-color: #94BE0F;
+}
+
+.card-icon img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.action-card h3 {
+    color: #015d25;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.action-card p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Footer */
+.empleado-footer {
+    background: #015d25;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .empleado-header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .actions-grid {
+        grid-template-columns: 1fr;
+    }
+}

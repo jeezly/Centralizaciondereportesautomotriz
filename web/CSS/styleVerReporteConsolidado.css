@@ -1,0 +1,304 @@
+
+.reporte-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+}
+
+/* Header */
+.reporte-header {
+    background: linear-gradient(135deg, #015d25 0%, #1e962e 100%);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-logo img {
+    height: 60px;
+}
+
+.header-title h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.header-title p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.back-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Main content */
+.reporte-main {
+    flex: 1;
+    padding: 2rem;
+    background-color: white;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.reporte-content {
+    padding: 1rem;
+}
+
+/* Encabezado empresa */
+.encabezado-empresa {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #015d25;
+    padding-bottom: 1rem;
+}
+
+.logo-empresa {
+    height: 80px;
+    margin-right: 1.5rem;
+}
+
+.encabezado-empresa h2 {
+    color: #015d25;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/* Título y fecha */
+.titulo-fecha {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 1.5rem;
+}
+
+.titulo-fecha h3 {
+    color: #015d25;
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+.fecha-firmas {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.fecha {
+    margin-bottom: 0.5rem;
+}
+
+.firmas {
+    display: flex;
+    gap: 2rem;
+}
+
+.firma {
+    text-align: center;
+}
+
+.linea-firma {
+    border-bottom: 1px solid #000;
+    width: 120px;
+    margin-bottom: 0.3rem;
+}
+
+.firma p {
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+/* Secciones del reporte */
+.seccion-reporte {
+    margin-bottom: 2rem;
+    page-break-inside: avoid;
+}
+
+.section-title {
+    color: #015d25;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.5rem;
+}
+
+/* Resumen consolidado */
+.resumen-consolidado {
+    margin-bottom: 1.5rem;
+}
+
+.resumen-item {
+    margin-bottom: 0.5rem;
+}
+
+.total-orden {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    text-align: right;
+    color: #015d25;
+}
+
+/* Tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+}
+
+th, td {
+    padding: 0.75rem;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #015d25;
+    color: white;
+    font-weight: 500;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Relación de cobros */
+.cobros-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.cobro-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.cobro-item.total-item {
+    font-weight: bold;
+    color: #015d25;
+    border-top: 2px solid #015d25;
+}
+
+/* Facturación */
+.facturacion-section {
+    margin-top: 1.5rem;
+}
+
+.facturacion-table {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.facturacion-table td {
+    padding: 0.5rem;
+    border: none;
+}
+
+.facturacion-table tr:first-child td {
+    border-bottom: 1px solid #ddd;
+}
+
+/* Botones de exportación */
+.export-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.export-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.pdf-btn {
+    background-color: #d33;
+    color: white;
+}
+
+.pdf-btn:hover {
+    background-color: #a11;
+}
+
+.excel-btn {
+    background-color: #1d6f42;
+    color: white;
+}
+
+.excel-btn:hover {
+    background-color: #155732;
+}
+
+/* Footer */
+.reporte-footer {
+    background: #015d25;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .encabezado-empresa {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .logo-empresa {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .titulo-fecha {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .fecha-firmas {
+        margin-top: 1rem;
+        align-items: flex-start;
+    }
+    
+    .cobros-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .facturacion-table {
+        width: 100%;
+    }
+    
+    .export-buttons {
+        flex-direction: column;
+    }
+}

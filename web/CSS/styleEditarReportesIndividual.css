@@ -1,0 +1,468 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.reporte-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header mejorado */
+.reporte-header {
+    background: linear-gradient(135deg, #015d25 0%, #1e962e 100%);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 10;
+}
+
+.header-logo img {
+    height: 60px;
+    transition: transform 0.3s ease;
+}
+
+.header-logo img:hover {
+    transform: scale(1.05);
+}
+
+.header-title h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.header-title p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Botones mejorados */
+.back-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+}
+
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenido principal mejorado */
+.reporte-main {
+    flex: 1;
+    padding: 2rem;
+    background-color: #f5f5f5;
+}
+
+.reporte-form {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-section {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.form-section:last-child {
+    border-bottom: none;
+}
+
+.form-section h2 {
+    color: #015d25;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.form-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: #1e962e;
+}
+
+.section-title {
+    color: #015d25;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+/* Formularios mejorados */
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    flex: 1;
+    min-width: 200px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    padding-right: 25px;
+    background-color: #fff;
+}
+
+.form-group input:focus {
+    border-color: #1e962e;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(30, 150, 46, 0.2);
+}
+
+/* Campos de solo lectura mejorados */
+.readonly-field {
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0 !important;
+    color: #555;
+    cursor: not-allowed;
+    font-weight: 500;
+}
+
+.readonly-field:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: #e0e0e0 !important;
+}
+
+/* Campos de moneda mejorados */
+.currency-input {
+    position: relative;
+}
+
+.currency-input span {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    font-weight: 500;
+    z-index: 1;
+}
+
+.currency-input input {
+    padding-left: 25px !important;
+}
+
+/* Estilo para totales sin símbolo de moneda */
+.total-without-currency input {
+    padding-left: 10px !important;
+}
+
+/* Grupos de totales */
+.total-group label {
+    font-weight: bold;
+    color: #015d25;
+}
+
+.total-group input {
+    font-weight: bold;
+    color: #1e962e;
+    background-color: #f8f8f8;
+    border-color: #d1e7dd !important;
+}
+
+/* Tablas mejoradas */
+.verificaciones-table, .creditos-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.verificaciones-table th, 
+.verificaciones-table td,
+.creditos-table th,
+.creditos-table td {
+    padding: 0.75rem;
+    text-align: center;
+    border: 1px solid #e0e0e0;
+}
+
+.verificaciones-table th,
+.creditos-table th {
+    background-color: #015d25;
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.verificaciones-table tr:nth-child(even),
+.creditos-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.verificaciones-table tr:hover,
+.creditos-table tr:hover {
+    background-color: #f1f8ff;
+}
+
+.verificaciones-table input,
+.creditos-table input,
+.creditos-table select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.verificaciones-table input:focus,
+.creditos-table input:focus,
+.creditos-table select:focus {
+    border-color: #1e962e;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(30, 150, 46, 0.1);
+}
+
+.verificaciones-table input[readonly],
+.creditos-table input[readonly] {
+    background-color: #f8f8f8;
+    border-color: #e0e0e0;
+    color: #555;
+}
+
+/* Filas de totales */
+.total-row td {
+    font-weight: bold;
+    background-color: #e8f5e9;
+    color: #015d25;
+}
+
+.total-row input {
+    font-weight: bold;
+    color: #1e962e;
+    background-color: #e8f5e9 !important;
+}
+
+/* Botones mejorados */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn i {
+    font-size: 1rem;
+}
+
+.cancel-btn {
+    background-color: #f1f1f1;
+    color: #555;
+}
+
+.cancel-btn:hover {
+    background-color: #e0e0e0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.save-btn {
+    background-color: #1e962e;
+    color: white;
+}
+
+.save-btn:hover {
+    background-color: #178026;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.agregar-btn {
+    background-color: #015d25;
+    color: white;
+    margin-top: 1rem;
+}
+
+.agregar-btn:hover {
+    background-color: #01461c;
+    transform: translateY(-2px);
+}
+
+.remove-btn {
+    background-color: #d33;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 3px;
+    transition: all 0.2s;
+}
+
+.remove-btn:hover {
+    background-color: #a11;
+    transform: scale(1.05);
+}
+
+/* Footer mejorado */
+.reporte-footer {
+    background: #015d25;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
+
+.reporte-footer p {
+    opacity: 0.9;
+}
+
+/* Efectos y transiciones */
+input, select, button, .btn {
+    transition: all 0.2s ease-in-out;
+}
+
+/* Responsive mejorado */
+@media (max-width: 768px) {
+    .reporte-header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+        padding: 1rem;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .form-group {
+        min-width: 100%;
+    }
+    
+    .verificaciones-table, .creditos-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    .form-actions {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .reporte-form {
+        padding: 1rem;
+    }
+}
+
+/* Estilos adicionales para mejor UX */
+::-webkit-input-placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+:-moz-placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+::-moz-placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+:-ms-input-placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.form-section {
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Efecto de carga */
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}

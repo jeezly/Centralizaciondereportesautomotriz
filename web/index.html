@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro Automotriz El Rosario | Login</title>
+   <link rel="stylesheet" href="./Style/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./Style/fontawesome-free-6.5.2-web/css/all.min.css">
+    <link rel="stylesheet" href="./CSS/styleLogin.css">
+</head>
+<body>
+     <div class="login-container">
+        
+        <img src="MEDIA/LogoElRosario.png" alt="Logo El Rosario" class="main-logo"/>
+      
+        <div class="login-wrapper">
+
+            <div class="brand-section">
+                <h1>Centro Automotriz <span>El Rosario</span></h1>
+                <p>Sistema de Gestión de Verificaciones</p>
+            </div>
+            
+            <div class="login-form">
+                <div class="form-header">
+                    <h2>Iniciar Sesión</h2>
+                    <p>Ingresa tus credenciales para acceder</p>
+                </div>
+                
+                <form id="loginForm">
+                    <div class="input-group">
+                        <span class="input-icon">
+                            <i class="fas fa-user"></i>
+                        </span>
+                        <input type="text" id="username" name="username" placeholder="Usuario" required>
+                    </div>
+                    
+                    <div class="input-group">
+                        <span class="input-icon">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                        <input type="password" id="password" name="password" placeholder="Contraseña" required>
+                        <button type="button" class="show-password" id="showPassword">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    
+                    <button type="submit" class="login-btn">
+                        <span>Acceder</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </form>
+                
+                <div class="login-footer">
+                    <p>¿Problemas para ingresar? <a href="#">Contacta al administrador</a></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="login-decoration">
+            <div class="decoration-circle circle-1"></div>
+            <div class="decoration-circle circle-2"></div>
+            <div class="decoration-circle circle-3"></div>
+            <div class="decoration-circle circle-4"></div>
+        </div>
+    </div>
+
+   
+</body>
+<script src="./Style/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+<script src="./Style/package/dist/sweetalert2.all.min.js"></script>
+<script src="./Style/fontawesome-free-6.5.2-web/js/all.min.js"></script>
+<script src="./JS/login.js"></script>
+</html>

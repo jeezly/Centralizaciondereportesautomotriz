@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Reportes | El Rosario</title>
+    <link href="../CSS/styleEditarReportes.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="../Style/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Style/fontawesome-free-6.5.2-web/css/all.min.css">
+</head>
+<body>
+    <div class="editar-reportes-container">
+        <!-- Barra superior -->
+        <header class="editar-header">
+            <div class="header-logo">
+                <img src="../MEDIA/LogoElRosarioWhite.png" alt="Logo El Rosario">
+            </div>
+            <div class="header-title">
+                <h1>Editar Reportes</h1>
+                <p>Modificar reportes existentes</p>
+            </div>
+            <button id="backBtn" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Regresar
+            </button>
+        </header>
+        
+        <!-- Contenido principal -->
+        <main class="editar-main">
+            <!-- Filtros -->
+            <div class="filtros-section">
+                <h2>Filtrar Reportes</h2>
+                <div class="filtros-row">
+                    <div class="form-group">
+                        <label for="filtroFecha">Fecha:</label>
+                        <input type="date" id="filtroFecha" name="filtroFecha">
+                    </div>
+                    <div class="form-group">
+                        <label for="filtroOrden">No. de Orden:</label>
+                        <input type="number" id="filtroOrden" name="filtroOrden" placeholder="Buscar por orden">
+                    </div>
+                    <button id="aplicarFiltrosBtn" class="btn filter-btn">
+                        <i class="fas fa-filter"></i> Aplicar Filtros
+                    </button>
+                    <button id="limpiarFiltrosBtn" class="btn clear-btn">
+                        <i class="fas fa-broom"></i> Limpiar
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Lista de reportes -->
+            <div class="reportes-list">
+                <h2>Reportes Disponibles</h2>
+                <div id="reportesContainer" class="reportes-grid">
+                    <!-- Los reportes se cargarán dinámicamente aquí -->
+                </div>
+            </div>
+        </main>
+        
+        <!-- Pie de página -->
+        <footer class="editar-footer">
+            <p>Centro Automotriz El Rosario S.A. de C.V. © </p>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../Style/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../Style/package/dist/sweetalert2.all.min.js"></script>
+    <script src="../Style/fontawesome-free-6.5.2-web/js/all.min.js"></script>
+    <script src="../JS/editarReportes.js" type="text/javascript"></script>
+</body>
+</html>
